@@ -90,7 +90,7 @@ const useStyles = makeStyles(theme => ({
 }))
 
 const SummaryCards = props => {
-  // console.log('SummaryCards props: ', props)
+  console.log('SummaryCards props: ', props)
 
   const classes = useStyles()
   const { state: pageState, dispatch } = useContext(StoreContext)
@@ -105,7 +105,7 @@ const SummaryCards = props => {
     districtType: props.districtType,
     state: props.state
   }
- 
+
   const [minimized, setMinimized] = useState(true)
 
   const closeCard = item => {
@@ -147,7 +147,7 @@ const SummaryCards = props => {
   return (
     <>
       <Slide direction="left" in={true} mountOnEnter unmountOnExit>
-        <Card className={clsx(classes.card, minimizeIcon && { minimized: !minimized }, { [classes.cardMinimized]: !minimized })}>
+        <Card className={clsx(classes.card, `explore_card__${ card.fipsCode }`, minimizeIcon && { minimized: !minimized }, { [classes.cardMinimized]: !minimized })}>
           <CardHeader
             title={<CardTitle card={card} />}
             action={
