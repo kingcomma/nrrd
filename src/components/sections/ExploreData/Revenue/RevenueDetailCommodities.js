@@ -48,7 +48,7 @@ const RevenueDetailCommodities = props => {
   const classes = useStyles()
   const theme = useTheme()
   const { state: filterState } = useContext(DataFilterContext)
-  const year = filterState[DFC.YEAR]
+  const year = parseInt(filterState[DFC.YEAR])
   const state = props.fipsCode
   const period = (filterState[DFC.PERIOD]) ? filterState[DFC.PERIOD] : 'Fiscal Year'
 

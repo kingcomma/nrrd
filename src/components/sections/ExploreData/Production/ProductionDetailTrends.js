@@ -54,7 +54,7 @@ const ProductionDetailTrends = props => {
   const classes = useStyles()
   const name = props.name
   const { state: filterState } = useContext(DataFilterContext)
-  const year = filterState[DFC.YEAR]
+  const year = parseInt(filterState[DFC.YEAR])
   const period = (filterState[DFC.PERIOD]) ? filterState[DFC.PERIOD] : DFC.PERIOD_FISCAL_YEAR
   const product = (filterState[DFC.COMMODITY]) ? filterState[DFC.COMMODITY] : 'Oil (bbl)'
   const state = props.fipsCode

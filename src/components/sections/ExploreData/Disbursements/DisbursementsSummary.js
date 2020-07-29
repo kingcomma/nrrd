@@ -40,7 +40,7 @@ const useStyles = makeStyles(theme => ({
 const DisbursementsSummary = props => {
   const { state: filterState } = useContext(DataFilterContext)
   const classes = useStyles()
-  const year = filterState[DFC.YEAR]
+  const year = parseInt(filterState[DFC.YEAR])
   const dataSet = 'FY ' + year
   const {
     distinctCommodities,

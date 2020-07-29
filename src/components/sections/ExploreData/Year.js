@@ -6,7 +6,7 @@ import { DATA_FILTER_CONSTANTS as DFC } from '../../../constants'
 
 const Year = ({ location }) => {
   const { state: filterState } = useContext(DataFilterContext)
-  const year = filterState[DFC.YEAR]
+  const year = parseInt(filterState[DFC.YEAR])
 
   return (
     <>

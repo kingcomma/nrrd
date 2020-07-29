@@ -50,7 +50,7 @@ const APOLLO_QUERY = gql`
 const DisbursementDetailTrends = props => {
   const classes = useStyles()
   const { state: filterState } = useContext(DataFilterContext)
-  const year = filterState[DFC.YEAR]
+  const year = parseInt(filterState[DFC.YEAR])
 
   const state = props.fipsCode
 

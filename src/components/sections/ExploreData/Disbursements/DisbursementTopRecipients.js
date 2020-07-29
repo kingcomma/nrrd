@@ -79,7 +79,7 @@ const DisbursementTopRecipients = props => {
   const title = props.title || ''
 
   const { state: filterState } = useContext(DataFilterContext)
-  const year = filterState[DFC.YEAR]
+  const year = parseInt(filterState[DFC.YEAR])
 
   const { loading, error, data } = useQuery(APOLLO_QUERY, { variables: { year } })
   const handleDelete = props.handleDelete || ((e, val) => {

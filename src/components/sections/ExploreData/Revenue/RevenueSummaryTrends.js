@@ -39,7 +39,7 @@ const APOLLO_QUERY = gql`
 const RevenueSummaryTrends = props => {
   // console.log('RevenueSummaryTrends props: ', props)
   const { state: filterState } = useContext(DataFilterContext)
-  const year = filterState[DFC.YEAR]
+  const year = parseInt(filterState[DFC.YEAR])
   const period = (filterState[DFC.PERIOD]) ? filterState[DFC.PERIOD] : DFC.PERIOD_FISCAL_YEAR
   const dataSet = (period === DFC.PERIOD_FISCAL_YEAR) ? 'FY ' + year : 'CY ' + year
   const state = props.fipsCode

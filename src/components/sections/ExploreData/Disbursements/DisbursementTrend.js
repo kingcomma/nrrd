@@ -65,7 +65,7 @@ const APOLLO_QUERY = gql`
 const DisbursementTrend = props => {
   const { state: filterState } = useContext(DataFilterContext)
   const classes = useStyles()
-  const year = filterState[DFC.YEAR]
+  const year = parseInt(filterState[DFC.YEAR])
   const dataSet = 'FY ' + year
   const { loading, error, data } = useQuery(APOLLO_QUERY, {
     variables: { state: props.fipsCode, year: year, period: CONSTANTS.FISCAL_YEAR }

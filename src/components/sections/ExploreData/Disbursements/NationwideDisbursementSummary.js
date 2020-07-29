@@ -58,7 +58,7 @@ const useStyles = makeStyles(theme => ({
 const NationwideDisbursementSummary = props => {
   const classes = useStyles()
   const { state: filterState } = useContext(DataFilterContext)
-  const year = filterState[DFC.YEAR]
+  const year = parseInt(filterState[DFC.YEAR])
   const dataSet = 'FY ' + year
 
   const { title } = props
