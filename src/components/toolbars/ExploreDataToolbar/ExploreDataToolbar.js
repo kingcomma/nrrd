@@ -307,7 +307,7 @@ const ExploreDataToolbar = props => {
         {locationTabOpen &&
         <BaseToolbar isSecondary={true}>
           <Box className={classes.horizontalMenuItems}>
-            <SearchLocationsInput onLink={onLink} />
+            <SearchLocationsInput onLink={onLink} id="exploreDataToolbar" />
             {cardMenuItems &&
               cardMenuItems.map((item, i) =>
                 <MenuItem

@@ -146,6 +146,7 @@ const ListboxComponent = React.forwardRef((props, ref) => {
 
 // SearchLocationsInput
 const SearchLocationsInput = props => {
+  console.log('SearchLocationsInput props: ', props)
   const data = useStaticQuery(graphql`
     query LocationQuery {
       onrr {
@@ -164,7 +165,7 @@ const SearchLocationsInput = props => {
   const classes = useStyles()
   const [input, setInput] = useState('')
   const [keyCount, setKeyCount] = useState(0)
-  const { onLink } = props
+  const { onLink, id } = props
 
   const handleSearch = event => {
     setInput(event.target.value)
@@ -234,7 +235,7 @@ const SearchLocationsInput = props => {
   return (
     <Autocomplete
       key={keyCount}
-      id="location-select"
+      id={`search-location-input__${ id }`}
       disableListWrap
       inputValue={input}
       options={OPTIONS}

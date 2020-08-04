@@ -104,7 +104,7 @@ const AddLocationCard = props => {
         disableTypography
       />
       <CardContent>
-        <SearchLocationsInput onLink={onLink} />
+        <SearchLocationsInput onLink={onLink} id="addLocationCard" />
       </CardContent>
       <CardActions>
         {cardMenuItems &&
