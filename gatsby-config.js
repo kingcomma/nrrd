@@ -123,7 +123,7 @@ const config = {
             // uri: 'https://hasura-onrr.app.cloud.gov/v1/graphql',
             uri: 'https://hasura-sandbox.app.cloud.gov/v1/graphql',
             // uri: 'https://hasura-nrrd-a.app.cloud.gov/v1/graphql',
-            //uri: 'https://hasura-nrrd-b.app.cloud.gov/v1/graphql',
+            // uri: 'https://hasura-nrrd-b.app.cloud.gov/v1/graphql',
             headers: {},
             fetch,
             resolvers: {}
@@ -163,6 +163,30 @@ const config = {
           maximumFileSizeToCacheInBytes: 20000000
         },
       },
+    },
+    {
+      resolve: 'gatsby-plugin-google-tagmanager',
+      options: {
+        id: 'GTM-NCRF98R',
+        // Include GTM in development.
+        // Defaults to false meaning GTM will only be loaded in production.
+        includeInDevelopment: false,
+        // datalayer to be set before GTM is loaded
+        // should be an object or a function that is executed in the browser
+        //
+        // Defaults to null
+        defaultDataLayer: { platform: 'gatsby' },
+        // Specify optional GTM environment details.
+        // gtmAuth: 'YOUR_GOOGLE_TAGMANAGER_ENVIRONMENT_AUTH_STRING',
+        gtmPreview: 'CLOUD_GOV_GTM_TESTING_BRANCH',
+        // dataLayerName: 'YOUR_DATA_LAYER_NAME',
+
+        // Name of the event that is triggered
+        // on every Gatsby route change.
+        //
+        // Defaults to gatsby-route-change
+        // routeChangeEventName: 'YOUR_ROUTE_CHANGE_EVENT_NAME',
+      }
     },
     'gatsby-plugin-use-query-params',
     'gatsby-plugin-meta-redirect' // make sure to put last in the array
