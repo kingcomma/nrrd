@@ -23,7 +23,8 @@ import {
   PERIOD,
   PERIOD_TYPES,
   FISCAL_YEAR,
-  CALENDAR_YEAR
+  CALENDAR_YEAR,
+  MAP_LEVEL
 } from '../../constants'
 
 import BaseButtonInput from './BaseButtonInput'
