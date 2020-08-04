@@ -175,7 +175,7 @@ const config = {
         // should be an object or a function that is executed in the browser
         //
         // Defaults to null
-        defaultDataLayer: { platform: 'gatsby' },
+        defaultDataLayer: { platform: 'gatsby_nrrd_cloud_gov' },
         // Specify optional GTM environment details.
         // gtmAuth: 'YOUR_GOOGLE_TAGMANAGER_ENVIRONMENT_AUTH_STRING',
         gtmPreview: 'CLOUD_GOV_GTM_TESTING_BRANCH',
