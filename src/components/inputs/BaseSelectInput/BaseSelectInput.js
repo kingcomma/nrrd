@@ -239,6 +239,7 @@ const BaseSingleSelectInput = ({ data, defaultSelected, selected, label, helperT
         displayEmpty
         label={label}
         input={theme}
+        inputProps={{ id: `${ labelSlug }-select-input` }}
         classes={{ root: classes.selectInput }}
       >
         {showClearSelected &&
