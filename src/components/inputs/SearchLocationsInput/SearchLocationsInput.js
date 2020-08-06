@@ -146,7 +146,6 @@ const ListboxComponent = React.forwardRef((props, ref) => {
 
 // SearchLocationsInput
 const SearchLocationsInput = props => {
-  console.log('SearchLocationsInput props: ', props)
   const data = useStaticQuery(graphql`
     query LocationQuery {
       onrr {
@@ -167,12 +166,12 @@ const SearchLocationsInput = props => {
   const [keyCount, setKeyCount] = useState(0)
   const { onLink, id } = props
 
+
   const handleSearch = event => {
     setInput(event.target.value)
   }
 
   const handleChange = val => {
-    console.log('handleChange val: ', val)
     try {
       const item = getRegionProperties(val)
       onLink(item[0])
