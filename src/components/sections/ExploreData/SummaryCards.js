@@ -90,7 +90,6 @@ const useStyles = makeStyles(theme => ({
 }))
 
 const SummaryCards = props => {
-  console.log('SummaryCards props: ', props)
 
   const classes = useStyles()
   const { state: pageState, dispatch } = useContext(StoreContext)

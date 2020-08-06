@@ -7,6 +7,7 @@ import PropTypes from 'prop-types'
 import { useTheme, makeStyles } from '@material-ui/core/styles'
 import {
   Box,
+  ListSubheader,
   TextField,
   useMediaQuery
 } from '@material-ui/core'
@@ -102,6 +103,7 @@ const RenderRow = props => {
 
 // Listbox component
 const ListboxComponent = React.forwardRef((props, ref) => {
+  console.log('ListboxComponent props: ', props)
   const { children, role, ...other } = props
 
   const theme = useTheme()
@@ -113,7 +115,7 @@ const ListboxComponent = React.forwardRef((props, ref) => {
   // console.log('ListboxComponent itemCount: ', itemData, itemCount)
   const getChildSize = child => {
     const charCount = child.props.children.props.children.length
-    if (React.isValidElement(child) && charCount > 20) {
+    if (React.isValidElement(child) && child.type === ListSubheader) {
       return 100
     }
 
@@ -166,7 +168,6 @@ const SearchLocationsInput = props => {
   const [keyCount, setKeyCount] = useState(0)
   const { onLink, id } = props
 
-
   const handleSearch = event => {
     setInput(event.target.value)
   }
@@ -175,7 +176,7 @@ const SearchLocationsInput = props => {
     try {
       const item = getRegionProperties(val)
       onLink(item[0])
-      setInput(val.location_name)
+      setInput(renderOptionLabel(val))
       setKeyCount(keyCount + 1)
     }
     catch (err) {
@@ -205,6 +206,7 @@ const SearchLocationsInput = props => {
 
   const renderLabel = item => {
     const label = renderOptionLabel(item)
+    // const label = item
     const searchString = input
 
     if (searchString) {
@@ -239,7 +241,8 @@ const SearchLocationsInput = props => {
       inputValue={input}
       options={OPTIONS}
       ListboxComponent={ListboxComponent}
-      getOptionLabel={option => option.location_name}
+      getOptionLabel={option => renderOptionLabel(option)}
+      getOptionSelected={option => setInput(option)}
       style={{ width: '100%', maxWidth: 250 }}
       renderInput={params => (
         <TextField

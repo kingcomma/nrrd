@@ -487,10 +487,10 @@ const MapContext = props => {
   const onZoomEnd = event => {
     x = event.transform.x
     y = event.transform.y
-      k = event.transform.k
-       setZoom(x, y, k)
-  
-      console.debug("OnZoomEnd", event)
+    k = event.transform.k
+    setZoom(x, y, k)
+
+    console.debug('OnZoomEnd', event)
   }
 
   const onClick = (d, fips, foo, bar) => {
@@ -501,8 +501,6 @@ const MapContext = props => {
     // get decoded location param
     const locationParam = queryParams.location
     let filteredLocations
-
-    console.log('queryParams: ', queryParams)
 
     // filter out location based on location params
     if (typeof locationParam !== 'undefined' && locationParam.length > 0) {
@@ -566,7 +564,7 @@ const MapContext = props => {
       mapZoom: mapK,
       mapX: mapX,
       mapY: mapY,
-	onZoomEnd: onZoomEnd,
+      onZoomEnd: onZoomEnd,
       onClick: onClick
     })
 
