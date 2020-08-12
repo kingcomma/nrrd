@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import clsx from 'clsx'
 
 import {
+  Box,
   Card,
   CardContent,
   CardHeader,
@@ -90,7 +91,6 @@ const useStyles = makeStyles(theme => ({
 }))
 
 const SummaryCards = props => {
-
   const classes = useStyles()
   const { state: pageState, dispatch } = useContext(StoreContext)
   const cards = pageState.cards
@@ -161,12 +161,15 @@ const SummaryCards = props => {
                   />
                 )}
                 {closeIcon && (
-                  <CloseIcon
-                    className={classes.close}
-                    onClick={(e, i) => {
-                      closeCard(i)
-                    }}
-                  />
+                  <Box component="span" className="card-close-icon">
+                    <CloseIcon
+                      className={classes.close}
+                      onClick={(e, i) => {
+                        closeCard(i)
+                      }}
+                    />
+                  </Box>
+
                 )}
               </>
             }
