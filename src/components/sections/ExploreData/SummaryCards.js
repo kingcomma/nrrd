@@ -4,7 +4,6 @@ import { makeStyles } from '@material-ui/core/styles'
 import clsx from 'clsx'
 
 import {
-  Box,
   Card,
   CardContent,
   CardHeader,
@@ -161,15 +160,12 @@ const SummaryCards = props => {
                   />
                 )}
                 {closeIcon && (
-                  <Box component="span" className="card-close-icon">
-                    <CloseIcon
-                      className={classes.close}
-                      onClick={(e, i) => {
-                        closeCard(i)
-                      }}
-                    />
-                  </Box>
-
+                  <CloseIcon
+                    className={classes.close}
+                    onClick={(e, i) => {
+                      closeCard(i)
+                    }}
+                  />
                 )}
               </>
             }
