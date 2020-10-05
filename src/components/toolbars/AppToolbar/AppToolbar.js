@@ -74,9 +74,6 @@ const useStyles = makeStyles(theme => ({
     },
   },
   mainMenuWrap: {
-    '& a': {
-      fontWeight: 'bold',
-    },
     '& a:nth-child(3)': {
       paddingRight: theme.spacing(1.5),
     },
