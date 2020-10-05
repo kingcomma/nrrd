@@ -74,11 +74,14 @@ const useStyles = makeStyles(theme => ({
     },
   },
   mainMenuWrap: {
+    '& a': {
+      fontWeight: 'bold',
+    },
     '& a:nth-child(3)': {
       paddingRight: theme.spacing(1.5),
     },
     '& a:last-child': {
-      borderLeft: '1px solid white',
+      borderLeft: '1px solid black',
       paddingLeft: theme.spacing(4),
     }
   }
@@ -89,7 +92,7 @@ const AppToolbar = props => {
   return (
     <div className={classes.root}>
       <AppBar position="static" style={{ position: 'relative' }}>
-        <BaseToolbar style={{ alignItems: 'center', backgroundColor: '#0a314d', justifyContent: 'space-between', minHeight: 95 }}>
+        <BaseToolbar style={{ alignItems: 'center', backgroundColor: '#fff', justifyContent: 'space-between', minHeight: 95 }}>
           {/* <IconButton
             edge="start"
             className={classes.menuButton}
@@ -102,10 +105,10 @@ const AppToolbar = props => {
             <Link href='/' linkType='default' style={{ display: 'block' }}><NrrdLogoPlaceholderImg style={{ maxHeight: 50 }} /></Link>
           </div>
           <div className={classes.mainMenuWrap}>
-            <Link href='/explore' linkType='Header' style={{ color: 'white' }}>Explore data</Link>
-            <Link href='/query-data' linkType='Header' style={{ color: 'white' }}>Query data</Link>
-            <Link href='/downloads' linkType='Header' style={{ color: 'white' }}>Download data</Link>
-            <Link href='/how-revenue-works' linkType='Header' style={{ color: 'white' }}>How revenue works</Link>
+            <Link href='/explore' linkType='Header' style={{ color: 'black' }}>Explore data</Link>
+            <Link href='/query-data' linkType='Header' style={{ color: 'black' }}>Query data</Link>
+            <Link href='/downloads' linkType='Header' style={{ color: 'black' }}>Download data</Link>
+            <Link href='/how-revenue-works' linkType='Header' style={{ color: 'black' }}>How revenue works</Link>
           </div>
           <div>
             <SearchSite />

@@ -16,13 +16,13 @@ const useStyles = makeStyles(theme => ({
     color: 'white',
   },
   searchBox: {
-    backgroundColor: 'rgba(41, 75, 99, .5)',
+    backgroundColor: 'rgba(241, 241, 241, .5)',
     marginLeft: '16px',
-    color: 'white',
+    color: 'black',
     width: '14ch',
     transition: theme.transitions.create('width'),
     '&:hover': {
-      backgroundColor: 'rgba(41, 75, 99, 1)',
+      backgroundColor: 'rgba(241, 241, 241, 1)'
     }
   },
   searchBoxMobile: {
@@ -48,7 +48,7 @@ const useStyles = makeStyles(theme => ({
     }
   },
   searchIcon: {
-    color: 'white',
+    color: 'black',
   }
 }))
 
